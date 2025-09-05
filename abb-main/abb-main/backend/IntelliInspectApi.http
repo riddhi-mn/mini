@@ -1,0 +1,6 @@
+@IntelliInspectApi_HostAddress = http://localhost:5199
+
+GET {{IntelliInspectApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

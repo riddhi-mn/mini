@@ -1,0 +1,47 @@
+# Dependencies
+node_modules/
+venv/
+
+# Build outputs
+dist/
+bin/
+obj/
+*.dll
+*.exe
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/
+
+# ML models and data
+*.pkl
+*.joblib
+*.h5
+*.pt
+
+# Environment variables
+.env
+.env.local
+
+# Cache
+.angular/cache/
+.npm/
+.pytest_cache/
+__pycache__/
+
+# Docker
+.dockerignore

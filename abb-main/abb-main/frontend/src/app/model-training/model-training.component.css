@@ -1,0 +1,319 @@
+.training-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+h2 {
+  color: white;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+p {
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.training-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.training-controls {
+  text-align: center;
+}
+
+.training-controls h3 {
+  color: white;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.training-info {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-item:last-child {
+  border-bottom: none;
+}
+
+.label {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
+.value {
+  color: white;
+  font-weight: 600;
+}
+
+.train-btn {
+  background: linear-gradient(45deg, #ffd700, #ffed4e);
+  color: #333;
+  border: none;
+  padding: 1.5rem 3rem;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 2rem 0;
+}
+
+.train-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+}
+
+.train-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.training-status {
+  color: white;
+  margin-top: 1rem;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid #ffd700;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1rem auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.training-error {
+  background: rgba(255, 0, 0, 0.1);
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  color: #ff6b6b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.success-message {
+  background: rgba(0, 255, 136, 0.1);
+  border: 1px solid rgba(0, 255, 136, 0.3);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  color: #00ff88;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.metrics-section h3 {
+  color: white;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.metric-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  text-align: center;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.metric-card.accuracy {
+  border-color: #00ff88;
+  background: rgba(0, 255, 136, 0.1);
+}
+
+.metric-card.precision {
+  border-color: #007bff;
+  background: rgba(0, 123, 255, 0.1);
+}
+
+.metric-card.recall {
+  border-color: #ffc107;
+  background: rgba(255, 193, 7, 0.1);
+}
+
+.metric-card.f1 {
+  border-color: #dc3545;
+  background: rgba(220, 53, 69, 0.1);
+}
+
+.metric-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.metric-label {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.training-summary {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.training-summary h4 {
+  color: white;
+  margin: 0 0 1rem 0;
+  text-align: center;
+}
+
+.summary-items {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+.summary-item {
+  text-align: center;
+}
+
+.confusion-matrix {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.confusion-matrix h4 {
+  color: white;
+  margin: 0 0 1rem 0;
+  text-align: center;
+}
+
+.matrix-grid {
+  display: grid;
+  grid-template-columns: 100px 1fr 1fr;
+  grid-template-rows: auto 1fr 1fr;
+  gap: 2px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.matrix-header {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.75rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.matrix-label {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.75rem;
+  text-align: center;
+  font-weight: bold;
+  writing-mode: vertical-lr;
+  text-orientation: mixed;
+}
+
+.matrix-cell {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 0.25rem;
+}
+
+.matrix-cell.tp {
+  background: rgba(0, 255, 136, 0.2);
+  border: 1px solid #00ff88;
+}
+
+.matrix-cell.tn {
+  background: rgba(0, 255, 136, 0.2);
+  border: 1px solid #00ff88;
+}
+
+.matrix-cell.fp {
+  background: rgba(255, 0, 0, 0.2);
+  border: 1px solid #ff6b6b;
+}
+
+.matrix-cell.fn {
+  background: rgba(255, 0, 0, 0.2);
+  border: 1px solid #ff6b6b;
+}
+
+.actions {
+  text-align: center;
+}
+
+.next-btn, .back-btn {
+  background: linear-gradient(45deg, #ffd700, #ffed4e);
+  color: #333;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.next-btn:hover, .back-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+}
+
+.no-dataset {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 3rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.no-dataset p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}

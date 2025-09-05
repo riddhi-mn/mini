@@ -1,0 +1,124 @@
+/* Application Styles */
+.app-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.app-header {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 1rem 2rem;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.app-header p {
+  margin: 0.5rem 0 0 0;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.app-nav {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem 2rem;
+  backdrop-filter: blur(10px);
+}
+
+.progress-indicator {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  gap: 3rem;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.6);
+  transition: all 0.3s ease;
+}
+
+.step.active {
+  color: #ffd700;
+}
+
+.step.completed {
+  color: #00ff88;
+}
+
+.step-number {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.step.active .step-number {
+  background: #ffd700;
+  color: #333;
+  border-color: #ffd700;
+}
+
+.step.completed .step-number {
+  background: #00ff88;
+  color: #333;
+  border-color: #00ff88;
+}
+
+.step-label {
+  font-size: 0.9rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.tab-navigation {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.tab-navigation button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.tab-navigation button:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.tab-navigation button.active {
+  background: #ffd700;
+  color: #333;
+}
+
+.tab-navigation button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.app-main {
+  padding: 2rem;
+  min-height: calc(100vh - 200px);
+}
