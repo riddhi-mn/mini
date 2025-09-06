@@ -5,10 +5,9 @@ import { Router } from '@angular/router';
 import { DataService, DatasetMetadata, DateRangeRequest, DateRangeValidation } from '../data.service';
 
 @Component({
-  selector: 'app-date-ranges',
-  standalone: true,
-  imports: [CommonModule, FormsModule],
-  template: `
+    selector: 'app-date-ranges',
+    imports: [CommonModule, FormsModule],
+    template: `
     <div class="date-ranges-container">
       <h2>Configure Date Ranges</h2>
       <p>Define time-based splits for training, testing, and simulation</p>
@@ -134,7 +133,7 @@ import { DataService, DatasetMetadata, DateRangeRequest, DateRangeValidation } f
       </div>
     </div>
   `,
-  styleUrls: ['./date-ranges.component.css']
+    styleUrls: ['./date-ranges.component.css']
 })
 export class DateRangesComponent implements OnInit {
   metadata: DatasetMetadata | null = null;

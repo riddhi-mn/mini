@@ -4,10 +4,9 @@ import { Router } from '@angular/router';
 import { DataService, DatasetMetadata, TrainingResult } from '../data.service';
 
 @Component({
-  selector: 'app-model-training',
-  standalone: true,
-  imports: [CommonModule],
-  template: `
+    selector: 'app-model-training',
+    imports: [CommonModule],
+    template: `
     <div class="training-container">
       <h2>Model Training & Evaluation</h2>
       <p>Train an XGBoost model and evaluate its performance</p>
@@ -130,7 +129,7 @@ import { DataService, DatasetMetadata, TrainingResult } from '../data.service';
       </div>
     </div>
   `,
-  styleUrls: ['./model-training.component.css']
+    styleUrls: ['./model-training.component.css']
 })
 export class ModelTrainingComponent implements OnInit {
   metadata: DatasetMetadata | null = null;

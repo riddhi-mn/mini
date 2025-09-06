@@ -4,10 +4,9 @@ import { Router } from '@angular/router';
 import { DataService, DatasetMetadata } from '../data.service';
 
 @Component({
-  selector: 'app-upload-dataset',
-  standalone: true,
-  imports: [CommonModule],
-  template: `
+    selector: 'app-upload-dataset',
+    imports: [CommonModule],
+    template: `
     <div class="upload-container">
       <h2>Upload Dataset</h2>
       <p>Upload the Kaggle Production Line sensor data CSV file</p>
@@ -76,7 +75,7 @@ import { DataService, DatasetMetadata } from '../data.service';
       </div>
     </div>
   `,
-  styleUrls: ['./upload-dataset.component.css']
+    styleUrls: ['./upload-dataset.component.css']
 })
 export class UploadDatasetComponent {
   metadata: DatasetMetadata | null = null;

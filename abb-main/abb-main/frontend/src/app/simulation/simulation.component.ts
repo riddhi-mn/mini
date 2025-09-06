@@ -20,10 +20,9 @@ interface SimulationStats {
 }
 
 @Component({
-  selector: 'app-simulation',
-  standalone: true,
-  imports: [CommonModule],
-  template: `
+    selector: 'app-simulation',
+    imports: [CommonModule],
+    template: `
     <div class="simulation-container">
       <h2>Real-Time Prediction Simulation</h2>
       <p>Simulate model inference on historical data at second-level granularity</p>
@@ -167,7 +166,7 @@ interface SimulationStats {
       </div>
     </div>
   `,
-  styleUrls: ['./simulation.component.css']
+    styleUrls: ['./simulation.component.css']
 })
 export class SimulationComponent implements OnInit, OnDestroy {
   metadata: DatasetMetadata | null = null;

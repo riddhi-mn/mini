@@ -3,10 +3,9 @@ import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterModule, CommonModule],
-  template: `
+    selector: 'app-root',
+    imports: [RouterModule, CommonModule],
+    template: `
     <div class="app-container">
       <header class="app-header">
         <h1>IntelliInspect</h1>
@@ -46,7 +45,7 @@ import { CommonModule } from '@angular/common';
       </main>
     </div>
   `,
-  styleUrls: ['./app.component.css']
+    styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   currentStep = 1;
