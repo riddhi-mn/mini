@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { DataService, DatasetMetadata, TrainingResult } from '../data.service';
@@ -139,12 +139,16 @@ export class ModelTrainingComponent implements OnInit {
 
   constructor(
     private dataService: DataService,
-    private router: Router
+    private router: Router,
+    private cdr: ChangeDetectorRef
   ) {}
 
   ngOnInit() {
-    this.metadata = this.dataService.getMetadata();
-  }
+  this.dataService.metadata$.subscribe(data => {
+    this.metadata = data;
+    this.cdr.detectChanges();
+  });
+}
 
   trainModel() {
     if (!this.metadata) return;

@@ -44,7 +44,8 @@ export interface TrainingResult {
   providedIn: 'root'
 })
 export class DataService {
-  private readonly apiUrl = 'http://localhost:5000/api';
+  //private readonly apiUrl = 'http://localhost:5000/api';
+  private readonly apiUrl = 'http://localhost:5199/api';
   private metadataSubject = new BehaviorSubject<DatasetMetadata | null>(null);
   public metadata$ = this.metadataSubject.asObservable();
 
@@ -57,6 +58,7 @@ export class DataService {
     return this.http.post<DatasetMetadata>(`${this.apiUrl}/dataset/upload`, formData)
       .pipe(
         map(metadata => {
+           console.log('%c[DataService] Setting NEW metadata in Subject:', 'color: green; font-weight: bold;', metadata);
           this.metadataSubject.next(metadata);
           return metadata;
         })

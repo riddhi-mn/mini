@@ -28,9 +28,11 @@ public class DatasetController : ControllerBase
             return BadRequest(new { error = ex.Message });
         }
         catch (Exception ex)
-        {
-            return StatusCode(500, new { error = "Failed to process dataset", details = ex.Message });
-        }
+{
+    Console.WriteLine("--- CAUGHT EXCEPTION ---"); // Add this line
+    Console.WriteLine(ex);                         // Add this line
+    return StatusCode(500, new { error = "Failed to process dataset", details = ex.Message });
+}
     }
 
     [HttpPost("validate-ranges")]

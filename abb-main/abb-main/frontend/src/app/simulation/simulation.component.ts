@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { DataService, DatasetMetadata } from '../data.service';
@@ -188,12 +188,16 @@ export class SimulationComponent implements OnInit, OnDestroy {
 
   constructor(
     private dataService: DataService,
-    private router: Router
+    private router: Router,
+    private cdr: ChangeDetectorRef
   ) {}
 
   ngOnInit() {
-    this.metadata = this.dataService.getMetadata();
-  }
+  this.dataService.metadata$.subscribe(data => {
+    this.metadata = data;
+     this.cdr.detectChanges();
+  });
+}
 
   ngOnDestroy() {
     if (this.simulationInterval) {

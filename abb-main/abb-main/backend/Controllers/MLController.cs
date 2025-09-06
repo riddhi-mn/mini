@@ -23,8 +23,8 @@ public class MLController : ControllerBase
             var json = JsonSerializer.Serialize(request);
             var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
             
-            var response = await _httpClient.PostAsync("http://ml_service:8000/train-model", content);
-            
+            //var response = await _httpClient.PostAsync("http://ml_service:8000/train-model", content);
+            var response = await _httpClient.PostAsync("http://localhost:8000/train-model", content);
             if (!response.IsSuccessStatusCode)
             {
                 var errorContent = await response.Content.ReadAsStringAsync();
@@ -50,8 +50,8 @@ public class MLController : ControllerBase
     {
         try
         {
-            var response = await _httpClient.GetAsync($"http://ml_service:8000/simulation/{simulationStart}/{simulationEnd}");
-            
+            //var response = await _httpClient.GetAsync($"http://ml_service:8000/simulation/{simulationStart}/{simulationEnd}");
+            var response = await _httpClient.GetAsync($"http://localhost:8000/simulation/{simulationStart}/{simulationEnd}");
             if (!response.IsSuccessStatusCode)
             {
                 var errorContent = await response.Content.ReadAsStringAsync();

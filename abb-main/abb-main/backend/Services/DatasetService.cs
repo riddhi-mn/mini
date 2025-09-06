@@ -52,7 +52,7 @@ public class DatasetService
             var baseTime = new DateTime(2021, 1, 1, 0, 0, 0, DateTimeKind.Utc);
             for (int i = 0; i < records.Count; i++)
             {
-                records[i]["synthetic_timestamp"] = baseTime.AddSeconds(i).ToString("yyyy-MM-ddTHH:mm:ssZ");
+                records[i]["synthetic_timestamp"] = baseTime.AddSeconds(i).ToString("yyyy-MM-ddTHH:mm:ssZ", CultureInfo.InvariantCulture);
             }
         }
 
@@ -98,7 +98,8 @@ public class DatasetService
         
         try
         {
-            var response = await _httpClient.PostAsync("http://ml_service:8000/set-dataset", content);
+            //var response = await _httpClient.PostAsync("http://ml_service:8000/set-dataset", content);
+            var response = await _httpClient.PostAsync("http://localhost:8000/set-dataset", content);
             response.EnsureSuccessStatusCode();
         }
         catch (Exception ex)

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef  } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -153,16 +153,30 @@ export class DateRangesComponent implements OnInit {
 
   constructor(
     private dataService: DataService,
-    private router: Router
+    private router: Router,
+    private cdr: ChangeDetectorRef
   ) {}
 
   ngOnInit() {
-    this.metadata = this.dataService.getMetadata();
+  console.log('%c[DateRanges] ngOnInit() fired. Subscribing to metadata$...', 'color: orange;');
+
+  // Also log the STATIC value just to see what it is on init
+  const staticMeta = this.dataService.getMetadata();
+  console.log('%c[DateRanges] Static metadata (getMetadata()) on init is:', 'color: red;', staticMeta);
+
+  // Now subscribe to the stream
+  this.dataService.metadata$.subscribe(data => {
+    console.log('%c[DateRanges] metadata$ stream emitted:', 'color: green; font-weight: bold;', data);
+    this.metadata = data;
+
     if (this.metadata) {
+      console.log('%c[DateRanges] Metadata exists, setting up defaults...', 'color: green;');
       this.setupDateLimits();
       this.setDefaultRanges();
     }
-  }
+    this.cdr.detectChanges();
+  });
+}
 
   private setupDateLimits() {
     if (!this.metadata) return;

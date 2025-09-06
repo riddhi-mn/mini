@@ -147,6 +147,7 @@ export class UploadDatasetComponent {
   }
 
   goToNext() {
+    console.log('%c[UploadComponent] goToNext() called. Local metadata is:', 'color: blue;', this.metadata);
     this.router.navigate(['/dates']);
   }
 }
