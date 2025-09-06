@@ -114,7 +114,7 @@ dotnet run
 #### ML Service (Python)
 ```bash
 cd ml_service
-python -m venv venv
+python3.13 -m venv venv
 source venv/bin/activate  # Linux/Mac
 pip install -r requirements.txt
 uvicorn main:app --host 0.0.0.0 --port 8000
